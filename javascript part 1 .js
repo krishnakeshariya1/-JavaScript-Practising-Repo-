@@ -1,8 +1,8 @@
 const book = {
-    author : "krishna",
-    page : 320,
-    title : "The fight",
-    descibe(){
+    author: "krishna",
+    page: 320,
+    title: "The fight",
+    descibe() {
         return `The book  ${this.title} has ${this.page} page and written by ${this.author}`;
     },
 };
@@ -10,18 +10,18 @@ console.log(book.descibe())
 
 // question number 2 
 const person = {
-    name : "krishna",
-    age : 20,
+    name: "krishna",
+    age: 20,
     address: {
-        city : "Gwalior",
-        state : "MP",
+        city: "Gwalior",
+        state: "MP",
     },
 }
 console.log(person["address"]["state"]);
 
 // question  number 3 
 // cloning  the Object 
- 
+
 // const books = {...book};
 // books.author = "Amrita"
 // console.log(books.descibe())
@@ -36,12 +36,12 @@ console.log(person["address"]["state"]);
 //     })
 // }
 // printkey(person)
- // use object.entries to print all the keys and values of the perosn
+// use object.entries to print all the keys and values of the perosn
 //  Object.entries(person).forEach(([key,val])=>{
 //     console.log(key, val)
 //  })
 
- // make two object and merge them using spread and assign operator
+// make two object and merge them using spread and assign operator
 //  const obj1 ={
 //     name : "krishna",
 //     course : "bca",
@@ -54,9 +54,9 @@ console.log(person["address"]["state"]);
 //     },
 //     pin :474003,
 //  }
- /// dono obj ko merege kerne ke liye ham object assign ka use kerte  hai  
+/// dono obj ko merege kerne ke liye ham object assign ka use kerte  hai  
 //  const merged = Object.assign({}, obj1,obj2) // we se {} as the target  to avoid changing obj1 or obj2
- // it is widely use in modern js
+// it is widely use in modern js
 
 //  const merger =  {...obj1, ...obj2}
 
@@ -98,7 +98,7 @@ console.log(person["address"]["state"]);
 //     const key2 = Object.keys(obj2);
 
 //     if(key1.length !== key2.length) return false;
-    
+
 //     for(let char of key1){
 //         if(!key2.includes(char)) return false;
 //         if(!equal(obj1[char], obj2[char])) return false;
@@ -386,7 +386,7 @@ console.log(person["address"]["state"]);
 // let arr = ar.sort();
 
 // reverse an aray 
-let ar =[10,20,30,40,50];
+let ar = [10, 20, 30, 40, 50];
 // ar = ar.reverse()
 
 // find the sum of all elements using reduce
@@ -397,7 +397,7 @@ let ar =[10,20,30,40,50];
 //     return acc*curval;
 // },1)
 // find max using reduce
-let arr =[12,45,3,23,67,43,78,21];
+let arr = [12, 45, 3, 23, 67, 43, 78, 21];
 // let max = arr.reduce((acc,curVal)=>{
 //     return curVal > acc  ? curVal : acc;
 // })
@@ -492,3 +492,81 @@ let arr =[12,45,3,23,67,43,78,21];
 // let double = multiply(2);
 // let triple = multiply(3);
 // console.log(double(5));
+
+// return an array after applying an function to each element 
+// const nums = [1, 2, 3, 4, 5];
+// const double = nums.map(num => num * 2);
+
+// used for perfoming an action, not reuring a new array
+// nums.forEach(num => console.log(num * 2));
+
+// maps and then flatterns the result by one level
+// const ar2 = [1, 2, 3, 4];
+// const result = ar2.flatMap(num => [num, num * 2]);
+// console.log(result);
+
+// reduce an array to a single element
+// const total = ar2.reduce((acc, curVal) => acc + curVal);
+
+// use map to convert the arrray of numbers into their squares
+const num = [1,2,3,4,5,6];
+const square = num.map(val => val*2);
+console.log(`The square of the elements of given array are :- ${square}`);
+
+//create an array of names and use map() to capitalize the first letter of the name
+ 
+const name = ["krishna","manu","raj","ram"];
+const capitalize = name.map(ele => (ele[0].toUpperCase() + ele.slice(1)));
+console.log(capitalize); 
+
+// create an array of string and return their lengths using map()
+const length = name.map(ele => ele.length);
+console.log(length);
+
+// use forEach() to print every element multiplied by 3
+num.forEach(val => val*3);
+console.log(num);
+
+// use map() to convert an array of prices  into prices witth 10% discount
+const prices = [1000,1200,340,4550];
+const discountPrices = prices.map(val => val*0.9);
+console.log(discountPrices);
+
+// given an array [1,2,3,4,5] use flatmap to return number and there multiple [1,1,2,2,3,3,4,4,5,5];
+const series = [1,2,3,4,5];
+const multiplySeries = series.flatMap(x => [x,x*1]);
+console.log(multiplySeries);
+
+// combine the  map and reduce to find the sum of the squares of element
+const sum = series.map(val => val**2).reduce((acc,curVal)=> acc +curVal);
+console.log(sum);
+
+// you have an array of words use flatmap to split each word into letters and create one flat map
+const words = [ "hello", "world","javascript"];
+const letter = words.flatMap(x => x.split(""));
+console.log(letter);
+
+// you have an array of students marks , use map() to convert them into grades
+const student = [60,70,50,33,90];
+const grades = student.map(val =>{
+    if(val >= 80 && val <= 100) return `A`;
+    else if(val >= 60 && val < 80) return "B";
+    else if(val >= 35 && val < 60) return "c";
+    return "Fail";
+});
+console.log(grades);
+
+// use reduce to count the total character in an array 
+const count = words.reduce((acc,curVal)=> acc + curVal.length,0);
+console.log(count);
+
+//  given an array of transactions use reduce() to calculate the net balance 
+const transactions = [ 100,-50,200,-150,50,-100,-100]
+const netBalance = transactions.reduce((acc, curVal)=> {
+    return curVal > 0 ? acc + curVal : curVal - acc;
+},0);
+console.log(netBalance);
+
+// we have given an nested array use flatmap to make a array and use reduce to find total  of the array element
+const nested = [1,2,[3,4,5],6];
+const flattern = nested.flatMap(x => x).reduce((acc,curVal)=> acc + curVal);
