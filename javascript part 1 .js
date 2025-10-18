@@ -598,3 +598,9 @@ const ageTotal = data.reduce((acc,curVal)=>{
     return curVal.age + acc 
 },0);
 console.log(ageTotal);
+
+// count the frequency of the array of object 
+let letters = ["a","b","c","d","a","b","d","d","d"];
+const frequency = letters.reduce((acc,curVal)=>{
+    acc = (acc[curVal] || 0)+1;
+},{})
