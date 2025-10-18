@@ -570,3 +570,19 @@ console.log(netBalance);
 // we have given an nested array use flatmap to make a array and use reduce to find total  of the array element
 const nested = [1,2,[3,4,5],6];
 const flattern = nested.flatMap(x => x).reduce((acc,curVal)=> acc + curVal);
+
+// convert an aray of string  into a single string seperated by commas using reduce()
+const arrString = ["krishna","keshariya","javascript"];
+const join = arrString.reduce((acc,curVal,index)=>{
+    return acc + (index === 0 ? curVal : ", " +curVal)
+}," ");
+console.log(join);
+
+//count the even number from an aray using reduce()
+const longArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const even = longArr.reduce((acc,curVal)=>{
+    if(curVal%2 === 0) {
+        acc++;
+    }
+    return acc;
+},0);
