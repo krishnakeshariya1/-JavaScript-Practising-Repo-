@@ -586,3 +586,15 @@ const even = longArr.reduce((acc,curVal)=>{
     }
     return acc;
 },0);
+
+// given an array of object with name and age then find the total age of all people
+let data = [
+    {name : "krishna", age: 20},
+    {name :"raj" , age: 32},
+    {name : "ram", age: 20},
+    {name : "raju", age: 18 },
+];
+const ageTotal = data.reduce((acc,curVal)=>{
+    return curVal.age + acc 
+},0);
+console.log(ageTotal);
