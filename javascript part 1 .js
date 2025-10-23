@@ -625,5 +625,20 @@ console.log(obj);
 delete obj.age;
 console.log(obj);
 
-//
+// loop through the object
+for(let ele in obj){
+    console.log(`The keys of object is "${ele}" and there values are "${obj[ele]}"`);
+};
 
+// count total properties
+ const totalProperties = Object.keys(obj).length;
+ console.log(`Total properties of an obj is :- ${totalProperties}`);
+
+ // or we can use loop to count the total properties.
+ let properties =0;
+ for(let ele in obj){
+    properties++;
+ }
+ console.log(`Total properties of an object is :- ${properties}`);
+
+ 
