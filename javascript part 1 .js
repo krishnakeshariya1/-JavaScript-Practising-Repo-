@@ -658,3 +658,30 @@ console.log(merege); // it does not change the original objects.
 const merged = Object.assign({}, obj,address);
 console.log(merged);
 
+// check a function exist in the key or not 
+const haskey = (obj,key)=>{
+    return obj.hasOwnProperty(key);
+};
+console.log(haskey(merege,"pin"));
+
+// object to array 
+
+// convert to array of keys
+const keys = Object.keys(address);
+console.log(keys, typeof(keys)); // but the problem is the type of this keys is still object
+
+// convert to array of values
+const values = Object.values(address);
+console.log(values, typeof(values)); // we are facing same problem here;
+
+// convert keys and values both to the array
+const entries = Object.entries(address);
+console.log(entries, typeof(entries)); // it return a nested array but the type is still a object
+
+// lets check are they really a array by using Array.isArray();
+console.log(Array.isArray(keys)); // True
+console.log(Array.isArray(values)); // true
+console.log(Array.isArray(entries)); // ture
+
+
+ 
