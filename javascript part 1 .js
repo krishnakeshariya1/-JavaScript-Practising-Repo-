@@ -700,3 +700,27 @@ console.log(`The pincode of the nested object is ${me["address"]["pin"]}`);
 me.address.city = "Mumbai";
 me.address.state = "Mp";
 console.log(me);
+
+
+// create a object and prevent any changes to it using object.freeze().
+const car = {
+    brand: "BMW",
+    model: "M4 competion"
+};
+Object.freeze(car);
+car.brand = "Audi";
+console.log(car); // no change happend
+// but if the car was nested object the inner object can modified. Because it is shallow freeze
+
+// deep freezing 
+const freeze = (obj)=>{
+    Object.freeze(obj);
+    Object.values(obj).forEach(val => {
+        if(typeof(val) === "object" && val !== null){
+            freeze(val);
+        }
+    });
+};
+console.log(freeze(me));
+me.address.city = "delhi";
+console.log(me); // the task is done 
