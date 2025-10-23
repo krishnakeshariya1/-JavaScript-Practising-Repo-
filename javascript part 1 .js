@@ -683,5 +683,20 @@ console.log(Array.isArray(keys)); // True
 console.log(Array.isArray(values)); // true
 console.log(Array.isArray(entries)); // ture
 
+// create a nested object and acess properties using dot and bracket notation
+const me = {
+    name :"krishna",
+    age : 20,
+    course : "BCA",
+    address : {
+        city : "Gwalior",
+        pin : 474003,
+    }
+};
+console.log(`The city of the nested object is ${me.address.city}`);
+console.log(`The pincode of the nested object is ${me["address"]["pin"]}`);
 
- 
+//  adding and updating nested property
+me.address.city = "Mumbai";
+me.address.state = "Mp";
+console.log(me);
