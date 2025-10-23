@@ -606,3 +606,24 @@ const frequency = letters.reduce((acc,curVal)=>{
   return acc;
 },{})
 
+
+// create a simple object and access object properties using dot notation and bracket notation
+const obj = {
+    name : "krishna",
+    age : 20,
+    course : "BCA",
+};
+console.log(obj.age);
+console.log(obj["course"]);
+
+// add and update properties 
+obj.city = "Gwalior";
+obj.age = 21;
+console.log(obj);
+
+// delete a property 
+delete obj.age;
+console.log(obj);
+
+//
+
