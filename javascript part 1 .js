@@ -641,4 +641,20 @@ for(let ele in obj){
  }
  console.log(`Total properties of an object is :- ${properties}`);
 
- 
+ // merge two objects 
+ const address = {
+    pin : 474003,
+    city : "Gwalior",
+    state : "MP",
+    country : "INDIA"
+};
+
+// There are 2 ways to do this 
+// using spread operator
+const merege =  {... obj, ...address};
+console.log(merege); // it does not change the original objects.
+
+// using object.assign
+const merged = Object.assign({}, obj,address);
+console.log(merged);
+
