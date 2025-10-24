@@ -783,4 +783,9 @@ const obj2 = {
 const obj3 = {...obj1, ...obj2};
 console.log(obj3) // obj2's c stay bcz when keys consflict like "c" the last object value overwrites the previous one.
 
-//
+// write a function that take 2 objects as parameter and return merged object
+const mergedObj = (firstObj , secondObj) =>{
+    return {...firstObj , ...secondObj};
+};
+console.log(mergedObj(obj1, obj2));
+
