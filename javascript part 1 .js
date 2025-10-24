@@ -860,3 +860,11 @@ for(let {name} of users){
     console.log(name);
 }
 
+// combine two object and display the with the help of object.entries 
+const basicInfo = {name : "krishna", age : 20};
+const contactInfo = {email : "krishnakeshariya@gmail.com", phoneNumber : 91999999};
+const allInfo = {...basicInfo , ...contactInfo};
+for(let [key ,value] of Object.entries(allInfo)){
+    let formattedKey = key.charAt(0).toUpperCase() + key.slice(1); 
+    console.log(`${formattedKey} :- ${value}`);
+}
