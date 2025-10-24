@@ -747,3 +747,14 @@ const personDetail ={
 const {ids, grade, school: { standard, section},} = personDetail;
 console.log(ids);
 console.log(standard);
+
+// destructure with default value when key does not exist
+
+const marks ={
+    maths : 75,
+    science : 60,
+    english : 80,
+};
+const { maths, science, english, hindi = 90} = marks;
+console.log(maths);
+console.log(hindi);
