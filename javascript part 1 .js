@@ -789,3 +789,16 @@ const mergedObj = (firstObj , secondObj) =>{
 };
 console.log(mergedObj(obj1, obj2));
 
+// use freeze and try to modify and delete properties and see the behaviour
+Object.freeze(obj3);
+obj3.f = 4; // we can not add a property to the object that is freezed
+obj3.a = 0;// we can not modify freezed object.
+delete obj3.c; // we can not delete the property of freezed object
+console.log(obj3);
+
+// object seal
+Object.seal(obj1);
+obj1.d = 4; // we can not add a property to seal object;
+delete obj1.a; // we can not delte the property of seal object
+obj1.a =0; // we can modify the seal objexct.
+console.log(obj1);
