@@ -724,3 +724,26 @@ const freeze = (obj)=>{
 console.log(freeze(me));
 me.address.city = "delhi";
 console.log(me); // the task is done 
+
+// destructuring an object person 
+const people ={
+    id: 2427,
+    age: 20,
+    city: "pune"
+};
+const { id, age, city} = people;
+console.log(id);
+console.log(age);
+
+// nested desructuring 
+const personDetail ={
+    ids: 2247,
+    grade: "B",
+    school : {
+        standard : "12th",
+        section : "B",
+    },
+};
+const {ids, grade, school: { standard, section},} = personDetail;
+console.log(ids);
+console.log(standard);
