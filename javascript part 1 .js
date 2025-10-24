@@ -791,14 +791,72 @@ console.log(mergedObj(obj1, obj2));
 
 // use freeze and try to modify and delete properties and see the behaviour
 Object.freeze(obj3);
-obj3.f = 4; // we can not add a property to the object that is freezed
-obj3.a = 0;// we can not modify freezed object.
-delete obj3.c; // we can not delete the property of freezed object
-console.log(obj3);
+obj3.f = 4; 
+obj3.a = 0;
+delete obj3.c; 
+console.log(obj3); // we can not add, modify, delete the property of freezed object
 
 // object seal
 Object.seal(obj1);
-obj1.d = 4; // we can not add a property to seal object;
-delete obj1.a; // we can not delte the property of seal object
-obj1.a =0; // we can modify the seal objexct.
-console.log(obj1);
+obj1.d = 4; 
+delete obj1.a; 
+obj1.a =0; 
+console.log(obj1); // we can only modify the seal object 
+
+// write a function to check that both object have same keys or not
+const compareObj = (obj1,obj2) =>{
+const key1 = Object.keys(obj1);
+const key2 = Object.keys(obj2);
+
+if(key1.length !== key2.length) return false;
+
+for(let key of key1){
+    if(obj1[key] !== obj2[key]) return false;
+}
+return true;
+};
+
+const b1 = {name : "kk", age : 20};
+const b2 = {name : "kk", age : 20};
+const b3 = {naam : "kk", age: 20};
+console.log(compareObj(b1,b2));
+console.log(compareObj(b1, b3));
+
+// deep copy the nested object
+const original = {
+    name : "krishna",
+    course : "BCA",
+    address: {
+        city : "Gwalior",
+        pincode :47400,
+    }
+};
+const deepclone = JSON.parse(JSON.stringify(original)); // method 1 
+
+const deepCopy = (obj)=>{
+    if(obj === null || typeof(obj) !== "object") return obj;
+
+    let copy = Array.isArray(obj) ? [] : {};
+    for(let key in obj){
+        copy[key] = deepCopy(obj[key]);
+    }
+    return copy;
+};
+const deep = deepCopy(original)
+deep.address.pincode =474003;
+console.log(deep);
+console.log(original);
+
+//count the keys 
+console.log(Object.keys(obj3).length);
+
+// print name form the array of object
+const users = [
+    {name : "krishna", age:20},
+    {name : "bhawna", age:20},
+    {name : "Amrita", age: 17},
+];
+for(let {name} of users){
+    console.log(name);
+}
+
