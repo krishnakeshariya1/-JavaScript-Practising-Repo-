@@ -904,3 +904,26 @@ console.log(men3.isAdult());
 console.log(men.compareAge(men1,men3));
 const men5 = new students("krishnaaa",19,101,"computer science");
 console.log(men5.introduce());
+
+class Animal {
+    constructor(species, age) {
+        this.species = species;
+        this.age = age;
+    }
+    info(){
+        return ` This is a ${this.species} and it is a ${this.age} years old`;
+    }
+}
+
+class Dog extends Animal{
+    constructor(species,age,name,breed){
+        super(species,age);
+        this.name = name;
+        this.breed = breed;
+    }
+    dogInfo(){
+        return `${this.name} is a ${this.breed} and ${this.age} year old`;
+    }
+}
+const d1 = new Dog("dog",5,"Rockey","labrador");
+console.log(d1.info());
