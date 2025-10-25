@@ -879,7 +879,10 @@ class men {
         return `Hi, I'am ${this.name} and i'm ${this.age} year old`;
     }
     isAdult(){
-        if(age > 18) return `${this.name} is adult`;
+        return age >= 18 ? `${this.name} is adult` : `${this.name} is not adult`
+    }
+    static compareAge(men1,men2){
+        return men1 >men2 ? `${men1.name} is older ` : `${men2.name} is older`;
     }
 }
 const men1 = new men("krishna", 20);
@@ -890,4 +893,5 @@ console.log(men1, men2);
 const men3 = new men("jatin",);
 console.log(men3.introduce());
 console.log(men3.isAdult());
+console.log(men.compareAge(men1,men3));
 
