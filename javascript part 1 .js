@@ -967,7 +967,7 @@ class bankAccount {
         return this.#balance;
     }
     setBalance(amount){
-        if(amount < 0) return ` Invalide balance ! Must be >=0`;
+        if(amount < 0 && typeof(this.#balance !== "amount")) return ` Invalide balance ! can not be negative or balance must be a number`;
         else{
             this.#balance = amount;
         }
@@ -990,4 +990,3 @@ console.log(acc1.getBlance());
 acc1.setBalance(-50)
 console.log(acc1.getBlance());
 
-//
