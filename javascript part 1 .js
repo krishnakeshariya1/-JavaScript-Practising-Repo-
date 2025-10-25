@@ -868,3 +868,17 @@ for(let [key ,value] of Object.entries(allInfo)){
     let formattedKey = key.charAt(0).toUpperCase() + key.slice(1); 
     console.log(`${formattedKey} :- ${value}`);
 }
+
+// create a class person with properties name and age and a method introduce()
+class men {
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    introduce(){
+        console.log(`HI, i am ${this.name} and I'm ${this.age} years old`);
+    }
+}
+const men1 = new men("krishna", 20);
+const men2 = new men("divyansh",22)
+console.log(men1, men2);
