@@ -871,14 +871,23 @@ for(let [key ,value] of Object.entries(allInfo)){
 
 // create a class person with properties name and age and a method introduce()
 class men {
-    constructor(name,age){
+    constructor(name,age = 21 ){
         this.name = name;
         this.age = age;
     }
     introduce(){
-        console.log(`HI, i am ${this.name} and I'm ${this.age} years old`);
+        return `Hi, I'am ${this.name} and i'm ${this.age} year old`;
+    }
+    isAdult(){
+        if(age > 18) return `${this.name} is adult`;
     }
 }
 const men1 = new men("krishna", 20);
 const men2 = new men("divyansh",22)
 console.log(men1, men2);
+
+// default parameter 
+const men3 = new men("jatin",);
+console.log(men3.introduce());
+console.log(men3.isAdult());
+
