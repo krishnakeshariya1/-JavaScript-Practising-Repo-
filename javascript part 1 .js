@@ -955,3 +955,37 @@ class Laptop extends device {
 }
 const l1 = new Laptop("dell",40000,12,"laptop");
 console.log(l1.info());
+
+class bankAccount {
+    #balance;
+
+    constructor(accountNumber,balance){
+        this.accountNumber = accountNumber;
+        this.#balance = balance;
+    }
+    getBlance(){
+        return this.#balance;
+    }
+    setBalance(amount){
+        if(amount < 0) return ` Invalide balance ! Must be >=0`;
+        else{
+            this.#balance = amount;
+        }
+    }
+    withdraw(amount){
+        if(amount > 0  && amount  <= this.#balance) this.#balance -=amount;
+        else {console.log("insucfficient funds or invalid amount")}
+    }
+    deposite(amount){
+        if(amount > 0) this.#balance +=amount;
+        else contactInfo.log("deposite must be positive");
+    }
+}
+const acc1 = new bankAccount(1234567,500)
+console.log(acc1.getBlance());
+acc1.deposite(200);
+console.log(acc1.getBlance());
+acc1.withdraw(100);
+console.log(acc1.getBlance());
+acc1.setBalance(-50)
+console.log(acc1.getBlance());
