@@ -884,7 +884,15 @@ class men {
     static compareAge(men1,men2){
         return men1 >men2 ? `${men1.name} is older ` : `${men2.name} is older`;
     }
-}
+};
+
+    class  students extends men{
+        constructor(name, age, rollNo, course) {
+            super(name, age);
+            this.rollNo = rollNo;
+            this.course = course;
+        }
+    }
 const men1 = new men("krishna", 20);
 const men2 = new men("divyansh",22)
 console.log(men1, men2);
@@ -894,4 +902,5 @@ const men3 = new men("jatin",);
 console.log(men3.introduce());
 console.log(men3.isAdult());
 console.log(men.compareAge(men1,men3));
-
+const men5 = new students("krishnaaa",19,101,"computer science");
+console.log(men5.introduce());
