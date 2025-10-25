@@ -927,3 +927,31 @@ class Dog extends Animal{
 }
 const d1 = new Dog("dog",5,"Rockey","labrador");
 console.log(d1.info());
+
+// override the info method of the parent class in the subclass
+class device {
+    constructor(name,cost,deviceType) {
+        this.name = name;
+        this.deviceType = deviceType;
+        this.cost = cost;
+    }
+    info(){
+        return `recently i have purchased new ${this.name} that is a ${this.deviceType} device and ${this.cost} for just one`
+    }
+}
+class Laptop extends device {
+    constructor(name,cost, gen, deviceType){
+        super(name,cost)
+        this.gen = gen;
+        this.deviceType = deviceType;
+    }
+    LaptopInfor(){
+        return `I have ${this.name} ${this.deviceType}  and its cost is ${this.cost} it is a ${this.gen} ${this.deviceType}`
+    }
+
+    info(){
+        return`recently i have purchase new ${this.name} that is ${this.deviceType} and its price is ${this.cost}`
+    }
+}
+const l1 = new Laptop("dell",40000,12,"laptop");
+console.log(l1.info());
