@@ -1159,7 +1159,7 @@ class vehicle {
         vehicle.totalvehicle++;
     }
     displayInfo(){
-        return `The brand of the vehicle is ${this.brand} and it's model is ${this.model} and it was launch in ${this.year}`;
+        console.log(`The brand of the vehicle is ${this.brand} and it's model is ${this.model} and it was launch in ${this.year}`);
     }
     startEngine(){
         console.log("Engine started 🚀");
@@ -1186,6 +1186,11 @@ class truck extends vehicle {
 
 const car1 = new cars("BMW","M4 competion", 2024);
 const bike1 = new bike("Royal Enfield","Classic 350 cc", 2022);
-const truck = new truck("volvo", "volvo S900",2020);
+const truck1 = new truck("volvo", "volvo S900",2020);
+const vehicles = [car1,bike1,truck1];
 
-
+vehicles.forEach(val => {
+    val.displayInfo();
+    val.startEngine();
+});
+console.log(vehicle.showTotalVehicles())
