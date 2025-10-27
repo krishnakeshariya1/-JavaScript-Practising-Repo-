@@ -1205,8 +1205,28 @@ class shape {
         throw new Error("method calculateArea must be implemented in subclass ❌");
     }
 }
-class rectangle extends {
-    constructor(parameters) {
-        
+class rectangle extends shape{
+    constructor(width , height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+    calculateArea(){
+        return this.width * this.height;
     }
 }
+class circle extends shape {
+    constructor(readius){
+        super();
+        this.readius = readius;
+    }
+    calculateArea(){
+        return Math.PI * this.readius**2;
+    }
+}
+const rectangle1 = new rectangle(10,5);
+const  circle1 = new circle(12);
+const shapes = [ rectangle1, circle1];
+shapes.forEach(val =>{
+    console.log(`${shape.construc}`)
+})
