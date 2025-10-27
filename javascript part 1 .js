@@ -1082,12 +1082,12 @@ class savingAcounts extends newBank {
         }
         else {
             this.balance -= amount;
-            console.log(`Remaning balance is ${this.balance}`)
+            console.log(`Remaning balance is ${this.balance}`);
             return;
         }
     }
     static info() {
-        return `Balance can not be less than ${Min_Balance};`
+        return `Balance can not be less than ${Min_Balance}`;
     }
 }
 class currentAccount extends newBank {
@@ -1098,11 +1098,11 @@ class currentAccount extends newBank {
         }
         else if(this.balance + overdraft >=- amount){
          this.balance -= amount;
-            console.log(`The owner wihdraw ${amount} and remaning balnce is ${this.balance}`)
+            console.log(`The owner wihdraw ${amount} and remaning balnce is ${this.balance}`);
         }
     }
     static info(){
-        return ` you can take overdraft upto 1000rs`
+        return ` you can take overdraft upto 1000rs`;
     }
 }
 const account1 = new newBank(121, 2000);
@@ -1119,3 +1119,4 @@ const account7 = new savingAcounts(1233,1000);
 console.log(account7.withdraw(800));
 const account8 = new currentAccount(123444,2000);
 console.log(account8.withdraw(2700));
+
