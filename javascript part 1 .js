@@ -509,109 +509,109 @@ let arr = [12, 45, 3, 23, 67, 43, 78, 21];
 // const total = ar2.reduce((acc, curVal) => acc + curVal);
 
 // use map to convert the arrray of numbers into their squares
-const num = [1,2,3,4,5,6];
-const square = num.map(val => val*2);
+const num = [1, 2, 3, 4, 5, 6];
+const square = num.map(val => val * 2);
 console.log(`The square of the elements of given array are :- ${square}`);
 
 //create an array of names and use map() to capitalize the first letter of the name
- 
-const name = ["krishna","manu","raj","ram"];
+
+const name = ["krishna", "manu", "raj", "ram"];
 const capitalize = name.map(ele => (ele[0].toUpperCase() + ele.slice(1)));
-console.log(capitalize); 
+console.log(capitalize);
 
 // create an array of string and return their lengths using map()
 const length = name.map(ele => ele.length);
 console.log(length);
 
 // use forEach() to print every element multiplied by 3
-num.forEach(val => val*3);
+num.forEach(val => val * 3);
 console.log(num);
 
 // use map() to convert an array of prices  into prices witth 10% discount
-const prices = [1000,1200,340,4550];
-const discountPrices = prices.map(val => val*0.9);
+const prices = [1000, 1200, 340, 4550];
+const discountPrices = prices.map(val => val * 0.9);
 console.log(discountPrices);
 
 // given an array [1,2,3,4,5] use flatmap to return number and there multiple [1,1,2,2,3,3,4,4,5,5];
-const series = [1,2,3,4,5];
-const multiplySeries = series.flatMap(x => [x,x*1]);
+const series = [1, 2, 3, 4, 5];
+const multiplySeries = series.flatMap(x => [x, x * 1]);
 console.log(multiplySeries);
 
 // combine the  map and reduce to find the sum of the squares of element
-const sum = series.map(val => val**2).reduce((acc,curVal)=> acc +curVal);
+const sum = series.map(val => val ** 2).reduce((acc, curVal) => acc + curVal);
 console.log(sum);
 
 // you have an array of words use flatmap to split each word into letters and create one flat map
-const words = [ "hello", "world","javascript"];
+const words = ["hello", "world", "javascript"];
 const letter = words.flatMap(x => x.split(""));
 console.log(letter);
 
 // you have an array of students marks , use map() to convert them into grades
-const student = [60,70,50,33,90];
-const grades = student.map(val =>{
-    if(val >= 80 && val <= 100) return `A`;
-    else if(val >= 60 && val < 80) return "B";
-    else if(val >= 35 && val < 60) return "c";
+const student = [60, 70, 50, 33, 90];
+const grades = student.map(val => {
+    if (val >= 80 && val <= 100) return `A`;
+    else if (val >= 60 && val < 80) return "B";
+    else if (val >= 35 && val < 60) return "c";
     return "Fail";
 });
 console.log(grades);
 
 // use reduce to count the total character in an array 
-const count = words.reduce((acc,curVal)=> acc + curVal.length,0);
+const count = words.reduce((acc, curVal) => acc + curVal.length, 0);
 console.log(count);
 
 //  given an array of transactions use reduce() to calculate the net balance 
-const transactions = [ 100,-50,200,-150,50,-100,-100]
-const netBalance = transactions.reduce((acc, curVal)=> {
+const transactions = [100, -50, 200, -150, 50, -100, -100]
+const netBalance = transactions.reduce((acc, curVal) => {
     return curVal > 0 ? acc + curVal : curVal - acc;
-},0);
+}, 0);
 console.log(netBalance);
 
 // we have given an nested array use flatmap to make a array and use reduce to find total  of the array element
-const nested = [1,2,[3,4,5],6];
-const flattern = nested.flatMap(x => x).reduce((acc,curVal)=> acc + curVal);
+const nested = [1, 2, [3, 4, 5], 6];
+const flattern = nested.flatMap(x => x).reduce((acc, curVal) => acc + curVal);
 
 // convert an aray of string  into a single string seperated by commas using reduce()
-const arrString = ["krishna","keshariya","javascript"];
-const join = arrString.reduce((acc,curVal,index)=>{
-    return acc + (index === 0 ? curVal : ", " +curVal)
-}," ");
+const arrString = ["krishna", "keshariya", "javascript"];
+const join = arrString.reduce((acc, curVal, index) => {
+    return acc + (index === 0 ? curVal : ", " + curVal)
+}, " ");
 console.log(join);
 
 //count the even number from an aray using reduce()
-const longArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-const even = longArr.reduce((acc,curVal)=>{
-    if(curVal%2 === 0) {
+const longArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const even = longArr.reduce((acc, curVal) => {
+    if (curVal % 2 === 0) {
         acc++;
     }
     return acc;
-},0);
+}, 0);
 
 // given an array of object with name and age then find the total age of all people
 let data = [
-    {name : "krishna", age: 20},
-    {name :"raj" , age: 32},
-    {name : "ram", age: 20},
-    {name : "raju", age: 18 },
+    { name: "krishna", age: 20 },
+    { name: "raj", age: 32 },
+    { name: "ram", age: 20 },
+    { name: "raju", age: 18 },
 ];
-const ageTotal = data.reduce((acc,curVal)=>{
-    return curVal.age + acc 
-},0);
+const ageTotal = data.reduce((acc, curVal) => {
+    return curVal.age + acc
+}, 0);
 console.log(ageTotal);
 
 // count the frequency of the array of object 
-let letters = ["a","b","c","d","a","b","d","d","d"];
-const frequency = letters.reduce((acc,curVal)=>{
-  acc[curVal] =(acc[curVal] || 0) +1;
-  return acc;
-},{})
+let letters = ["a", "b", "c", "d", "a", "b", "d", "d", "d"];
+const frequency = letters.reduce((acc, curVal) => {
+    acc[curVal] = (acc[curVal] || 0) + 1;
+    return acc;
+}, {})
 
 
 // create a simple object and access object properties using dot notation and bracket notation
 const obj = {
-    name : "krishna",
-    age : 20,
-    course : "BCA",
+    name: "krishna",
+    age: 20,
+    course: "BCA",
 };
 console.log(obj.age);
 console.log(obj["course"]);
@@ -626,57 +626,57 @@ delete obj.age;
 console.log(obj);
 
 // loop through the object
-for(let ele in obj){
+for (let ele in obj) {
     console.log(`The keys of object is "${ele}" and there values are "${obj[ele]}"`);
 };
 
 // count total properties
- const totalProperties = Object.keys(obj).length;
- console.log(`Total properties of an obj is :- ${totalProperties}`);
+const totalProperties = Object.keys(obj).length;
+console.log(`Total properties of an obj is :- ${totalProperties}`);
 
- // or we can use loop to count the total properties.
- let properties =0;
- for(let ele in obj){
+// or we can use loop to count the total properties.
+let properties = 0;
+for (let ele in obj) {
     properties++;
- }
- console.log(`Total properties of an object is :- ${properties}`);
+}
+console.log(`Total properties of an object is :- ${properties}`);
 
- // merge two objects 
- const address = {
-    pin : 474003,
-    city : "Gwalior",
-    state : "MP",
-    country : "INDIA"
+// merge two objects 
+const address = {
+    pin: 474003,
+    city: "Gwalior",
+    state: "MP",
+    country: "INDIA"
 };
 
 // There are 2 ways to do this 
 // using spread operator
-const merege =  {... obj, ...address};
+const merege = { ...obj, ...address };
 console.log(merege); // it does not change the original objects.
 
 // using object.assign
-const merged = Object.assign({}, obj,address);
+const merged = Object.assign({}, obj, address);
 console.log(merged);
 
 // check a function exist in the key or not 
-const haskey = (obj,key)=>{
+const haskey = (obj, key) => {
     return obj.hasOwnProperty(key);
 };
-console.log(haskey(merege,"pin"));
+console.log(haskey(merege, "pin"));
 
 // object to array 
 
 // convert to array of keys
 const keys = Object.keys(address);
-console.log(keys, typeof(keys)); // but the problem is the type of this keys is still object
+console.log(keys, typeof (keys)); // but the problem is the type of this keys is still object
 
 // convert to array of values
 const values = Object.values(address);
-console.log(values, typeof(values)); // we are facing same problem here;
+console.log(values, typeof (values)); // we are facing same problem here;
 
 // convert keys and values both to the array
 const entries = Object.entries(address);
-console.log(entries, typeof(entries)); // it return a nested array but the type is still a object
+console.log(entries, typeof (entries)); // it return a nested array but the type is still a object
 
 // lets check are they really a array by using Array.isArray();
 console.log(Array.isArray(keys)); // True
@@ -685,12 +685,12 @@ console.log(Array.isArray(entries)); // ture
 
 // create a nested object and acess properties using dot and bracket notation
 const me = {
-    name :"krishna",
-    age : 20,
-    course : "BCA",
-    address : {
-        city : "Gwalior",
-        pin : 474003,
+    name: "krishna",
+    age: 20,
+    course: "BCA",
+    address: {
+        city: "Gwalior",
+        pin: 474003,
     }
 };
 console.log(`The city of the nested object is ${me.address.city}`);
@@ -713,10 +713,10 @@ console.log(car); // no change happend
 // but if the car was nested object the inner object can modified. Because it is shallow freeze
 
 // deep freezing 
-const freeze = (obj)=>{
+const freeze = (obj) => {
     Object.freeze(obj);
     Object.values(obj).forEach(val => {
-        if(typeof(val) === "object" && val !== null){
+        if (typeof (val) === "object" && val !== null) {
             freeze(val);
         }
     });
@@ -726,124 +726,124 @@ me.address.city = "delhi";
 console.log(me); // the task is done 
 
 // destructuring an object person 
-const people ={
+const people = {
     id: 2427,
     age: 20,
     city: "pune"
 };
-const { id, age, city} = people;
+const { id, age, city } = people;
 console.log(id);
 console.log(age);
 
 // nested desructuring 
-const personDetail ={
+const personDetail = {
     ids: 2247,
     grade: "B",
-    school : {
-        standard : "12th",
-        section : "B",
+    school: {
+        standard: "12th",
+        section: "B",
     },
 };
-const {ids, grade, school: { standard, section},} = personDetail;
+const { ids, grade, school: { standard, section }, } = personDetail;
 console.log(ids);
 console.log(standard);
 
 // destructure with default value when key does not exist
 
-const marks ={
-    maths : 75,
-    science : 60,
-    english : 80,
+const marks = {
+    maths: 75,
+    science: 60,
+    english: 80,
 };
-const { maths, science, english, hindi = 90} = marks;
+const { maths, science, english, hindi = 90 } = marks;
 console.log(maths);
 console.log(hindi);
 
 // extract remaining keys using the rest operator.
-const product ={
+const product = {
     serial: 101,
-    productName : "Laptop",
-    brand : "HP",
-    cost : 50000,
+    productName: "Laptop",
+    brand: "HP",
+    cost: 50000,
 };
 const { serial, productName, ...rest } = product;
 console.log(rest);
 
 // merge two objects with spread operator and if both contain same key which key remains
 const obj1 = {
-    a : 1,
-    b : 2,
-    c : 3,
+    a: 1,
+    b: 2,
+    c: 3,
 };
 const obj2 = {
-    c : 1,
-    d : 2,
-    e : 3,
+    c: 1,
+    d: 2,
+    e: 3,
 };
-const obj3 = {...obj1, ...obj2};
+const obj3 = { ...obj1, ...obj2 };
 console.log(obj3) // obj2's c stay bcz when keys consflict like "c" the last object value overwrites the previous one.
 
 // write a function that take 2 objects as parameter and return merged object
-const mergedObj = (firstObj , secondObj) =>{
-    return {...firstObj , ...secondObj};
+const mergedObj = (firstObj, secondObj) => {
+    return { ...firstObj, ...secondObj };
 };
 console.log(mergedObj(obj1, obj2));
 
 // use freeze and try to modify and delete properties and see the behaviour
 Object.freeze(obj3);
-obj3.f = 4; 
+obj3.f = 4;
 obj3.a = 0;
-delete obj3.c; 
+delete obj3.c;
 console.log(obj3); // we can not add, modify, delete the property of freezed object
 
 // object seal
 Object.seal(obj1);
-obj1.d = 4; 
-delete obj1.a; 
-obj1.a =0; 
+obj1.d = 4;
+delete obj1.a;
+obj1.a = 0;
 console.log(obj1); // we can only modify the seal object 
 
 // write a function to check that both object have same keys or not
-const compareObj = (obj1,obj2) =>{
-const key1 = Object.keys(obj1);
-const key2 = Object.keys(obj2);
+const compareObj = (obj1, obj2) => {
+    const key1 = Object.keys(obj1);
+    const key2 = Object.keys(obj2);
 
-if(key1.length !== key2.length) return false;
+    if (key1.length !== key2.length) return false;
 
-for(let key of key1){
-    if(obj1[key] !== obj2[key]) return false;
-}
-return true;
+    for (let key of key1) {
+        if (obj1[key] !== obj2[key]) return false;
+    }
+    return true;
 };
 
-const b1 = {name : "kk", age : 20};
-const b2 = {name : "kk", age : 20};
-const b3 = {naam : "kk", age: 20};
-console.log(compareObj(b1,b2));
+const b1 = { name: "kk", age: 20 };
+const b2 = { name: "kk", age: 20 };
+const b3 = { naam: "kk", age: 20 };
+console.log(compareObj(b1, b2));
 console.log(compareObj(b1, b3));
 
 // deep copy the nested object
 const original = {
-    name : "krishna",
-    course : "BCA",
+    name: "krishna",
+    course: "BCA",
     address: {
-        city : "Gwalior",
-        pincode :47400,
+        city: "Gwalior",
+        pincode: 47400,
     }
 };
 const deepclone = JSON.parse(JSON.stringify(original)); // method 1 
 
-const deepCopy = (obj)=>{
-    if(obj === null || typeof(obj) !== "object") return obj;
+const deepCopy = (obj) => {
+    if (obj === null || typeof (obj) !== "object") return obj;
 
     let copy = Array.isArray(obj) ? [] : {};
-    for(let key in obj){
+    for (let key in obj) {
         copy[key] = deepCopy(obj[key]);
     }
     return copy;
 };
 const deep = deepCopy(original)
-deep.address.pincode =474003;
+deep.address.pincode = 474003;
 console.log(deep);
 console.log(original);
 
@@ -852,57 +852,57 @@ console.log(Object.keys(obj3).length);
 
 // print name form the array of object
 const users = [
-    {name : "krishna", age:20},
-    {name : "bhawna", age:20},
-    {name : "Amrita", age: 17},
+    { name: "krishna", age: 20 },
+    { name: "bhawna", age: 20 },
+    { name: "Amrita", age: 17 },
 ];
-for(let {name} of users){
+for (let { name } of users) {
     console.log(name);
 }
 
 // combine two object and display the with the help of object.entries 
-const basicInfo = {name : "krishna", age : 20};
-const contactInfo = {email : "krishnakeshariya@gmail.com", phoneNumber : 91999999};
-const allInfo = {...basicInfo , ...contactInfo};
-for(let [key ,value] of Object.entries(allInfo)){
-    let formattedKey = key.charAt(0).toUpperCase() + key.slice(1); 
+const basicInfo = { name: "krishna", age: 20 };
+const contactInfo = { email: "krishnakeshariya@gmail.com", phoneNumber: 91999999 };
+const allInfo = { ...basicInfo, ...contactInfo };
+for (let [key, value] of Object.entries(allInfo)) {
+    let formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
     console.log(`${formattedKey} :- ${value}`);
 }
 
 // create a class person with properties name and age and a method introduce()
 class men {
-    constructor(name,age = 21 ){
+    constructor(name, age = 21) {
         this.name = name;
         this.age = age;
     }
-    introduce(){
+    introduce() {
         return `Hi, I'am ${this.name} and i'm ${this.age} year old`;
     }
-    isAdult(){
+    isAdult() {
         return age >= 18 ? `${this.name} is adult` : `${this.name} is not adult`
     }
-    static compareAge(men1,men2){
-        return men1 >men2 ? `${men1.name} is older ` : `${men2.name} is older`;
+    static compareAge(men1, men2) {
+        return men1 > men2 ? `${men1.name} is older ` : `${men2.name} is older`;
     }
 };
 
-    class  students extends men{
-        constructor(name, age, rollNo, course) {
-            super(name, age);
-            this.rollNo = rollNo;
-            this.course = course;
-        }
+class students extends men {
+    constructor(name, age, rollNo, course) {
+        super(name, age);
+        this.rollNo = rollNo;
+        this.course = course;
     }
+}
 const men1 = new men("krishna", 20);
-const men2 = new men("divyansh",22)
+const men2 = new men("divyansh", 22)
 console.log(men1, men2);
 
 // default parameter 
 const men3 = new men("jatin",);
 console.log(men3.introduce());
 console.log(men3.isAdult());
-console.log(men.compareAge(men1,men3));
-const men5 = new students("krishnaaa",19,101,"computer science");
+console.log(men.compareAge(men1, men3));
+const men5 = new students("krishnaaa", 19, 101, "computer science");
 console.log(men5.introduce());
 
 class Animal {
@@ -910,124 +910,124 @@ class Animal {
         this.species = species;
         this.age = age;
     }
-    info(){
+    info() {
         return ` This is a ${this.species} and it is a ${this.age} years old`;
     }
 }
 
-class Dog extends Animal{
-    constructor(species,age,name,breed){
-        super(species,age);
+class Dog extends Animal {
+    constructor(species, age, name, breed) {
+        super(species, age);
         this.name = name;
         this.breed = breed;
     }
-    dogInfo(){
+    dogInfo() {
         return `${this.name} is a ${this.breed} and ${this.age} year old`;
     }
 }
-const d1 = new Dog("dog",5,"Rockey","labrador");
+const d1 = new Dog("dog", 5, "Rockey", "labrador");
 console.log(d1.info());
 
 // override the info method of the parent class in the subclass
 class device {
-    constructor(name,cost,deviceType) {
+    constructor(name, cost, deviceType) {
         this.name = name;
         this.deviceType = deviceType;
         this.cost = cost;
     }
-    info(){
+    info() {
         return `recently i have purchased new ${this.name} that is a ${this.deviceType} device and ${this.cost} for just one`
     }
 }
 class Laptop extends device {
-    constructor(name,cost, gen, deviceType){
-        super(name,cost)
+    constructor(name, cost, gen, deviceType) {
+        super(name, cost)
         this.gen = gen;
         this.deviceType = deviceType;
     }
-    LaptopInfor(){
+    LaptopInfor() {
         return `I have ${this.name} ${this.deviceType}  and its cost is ${this.cost} it is a ${this.gen} ${this.deviceType}`
     }
 
-    info(){
-        return`recently i have purchase new ${this.name} that is ${this.deviceType} and its price is ${this.cost}`
+    info() {
+        return `recently i have purchase new ${this.name} that is ${this.deviceType} and its price is ${this.cost}`
     }
 }
-const l1 = new Laptop("dell",40000,12,"laptop");
+const l1 = new Laptop("dell", 40000, 12, "laptop");
 console.log(l1.info());
 
 class bankAccount {
     #balance;
 
-    constructor(accountNumber,ownerName,balance =0){
+    constructor(accountNumber, ownerName, balance = 0) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.#balance = balance;
     }
-    getBlance(){
+    getBlance() {
         return this.#balance;
     }
-    setBalance(amount){
-        if(amount < 0 && typeof(this.#balance !== "amount")) return ` Invalide balance ! can not be negative or balance must be a number`;
-        else{
+    setBalance(amount) {
+        if (amount < 0 && typeof (this.#balance !== "amount")) return ` Invalide balance ! can not be negative or balance must be a number`;
+        else {
             this.#balance = amount;
         }
     }
-    withdraw(amount){
-        if(amount > 0  && amount  <= this.#balance) this.#balance -=amount;
-        else {console.log("insucfficient funds or invalid amount")}
+    withdraw(amount) {
+        if (amount > 0 && amount <= this.#balance) this.#balance -= amount;
+        else { console.log("insucfficient funds or invalid amount") }
     }
-    deposite(amount){
-        if(amount > 0) {
-            this.#balance +=amount;
+    deposite(amount) {
+        if (amount > 0) {
+            this.#balance += amount;
             return ` The Balance is ${this.#balance}`
         }
         else console.log("deposite must be positive");
     }
-    get balanceInfo(){
+    get balanceInfo() {
         return ` Current Balance is :- ${this.#balance}`;
     }
-    set owner(newName){
-       if(typeof newName !== "string" || newName.trim().length <=3){
-        return `Invalide name or must be greater than 3`;
-       }
-        else{
+    set owner(newName) {
+        if (typeof newName !== "string" || newName.trim().length <= 3) {
+            return `Invalide name or must be greater than 3`;
+        }
+        else {
             this.ownerName = newName.trim();
             console.log(`Owner name updated to : ${this.ownerName}`);
         }
     }
 }
-class savingAcount extends bankAccount{
-    constructor(accountNumber,ownerName,balance, intrestRate){
-        super( accountNumber,ownerName);
+class savingAcount extends bankAccount {
+    constructor(accountNumber, ownerName, balance, intrestRate) {
+        super(accountNumber, ownerName);
         this.intrestRate = intrestRate;
         this.balance = balance;
     }
-    addIntrest(){
-        const intrest = (this.balance *this.intrestRate)/100;
-        this.balance +=intrest;
+    addIntrest() {
+        const intrest = (this.balance * this.intrestRate) / 100;
+        this.balance += intrest;
         return this.balance;
     }
-    withdraw (amount){
+    withdraw(amount) {
         const Min_Balance = 500;
         const current = this.getBlance();
-        if(amount <=0) {
+        if (amount <= 0) {
             console.log(`Invaide withdraw amount`);
         }
 
-        else if(current - amount <= Min_Balance){
+        else if (current - amount <= Min_Balance) {
             console.log(` Can not withdraw ${amount}. Minimum balance ${Min_Balance} must be maintained`)
             return;
         }
-        else{
-        current -= amount;
-        console.log( `Remaning balance is ${this.balance}`)
-        return;
+        else {
+            current -= amount;
+            console.log(`Remaning balance is ${this.balance}`)
+            return;
         }
     }
 }
 
-const acc1 = new bankAccount(1234567,"karan",500)
+const acc1 = new bankAccount(1234567, "karan", 500)
 console.log(acc1.getBlance());
 console.log(acc1);
 acc1.deposite(200);
@@ -1038,7 +1038,7 @@ acc1.setBalance(-50)
 console.log(acc1.getBlance());
 acc1.owner = "krishna"
 
-const acc2 = new savingAcount(123123,"amrita",2000,5);
+const acc2 = new savingAcount(123123, "amrita", 2000, 5);
 console.log(acc2.deposite(100));
 console.log(acc2.withdraw(2000));
 
@@ -1046,41 +1046,76 @@ console.log(acc2.withdraw(2000));
 class newBank {
     static bankName = "Tech bank of India";
     static totalAccounts = 0;
-    constructor(accountNumber, balance =0) {
+    constructor(accountNumber, balance = 0) {
         this.accountNumber = accountNumber;
         this.balance = balance;
         newBank.totalAccounts++;
     }
-        withdraw(amount){
-        if(amount > 0  && amount  <= this.balance) this.balance -=amount;
-        else {console.log("insucfficient funds or invalid amount")}
+    withdraw(amount) {
+        if (amount > 0 && amount <= this.balance) this.balance -= amount;
+        else { console.log("insucfficient funds or invalid amount") }
     }
-    deposite(amount){
-        if(amount > 0) {
-            this.balance +=amount;
+    deposite(amount) {
+        if (amount > 0) {
+            this.balance += amount;
             return ` The Balance is ${this.balance}`
         }
         else console.log("deposite must be positive");
     }
-    static bankInfo(){
+    static bankInfo() {
         return `The Bank name is "${this.bankName}" and total accounts are ${this.totalAccounts};`
     }
 }
-class savingAcounts extends newBank{
-    constructor(accountNumber, balance) {
-        super(accountNumber, balance);
-    }
-    static changeBankName(newName){
+class savingAcounts extends newBank {
+    static changeBankName(newName) {
         newBank.bankName = newName;
     }
+    withdraw(amount) {
+        const Min_Balance = 500;
+        if (amount <= 0) {
+            console.log(`Invaide withdraw amount`);
+        }
+
+        else if (this.balance - amount <= Min_Balance) {
+            console.log(` Can not withdraw ${amount}. Minimum balance ${Min_Balance} must be maintained`)
+            return;
+        }
+        else {
+            this.balance -= amount;
+            console.log(`Remaning balance is ${this.balance}`)
+            return;
+        }
+    }
+    static info() {
+        return `Balance can not be less than ${Min_Balance};`
+    }
 }
-const account1 = new newBank(121,2000);
-const account2 = new newBank(122,2000);
-const account3 = new newBank(123,2000);
-const account4 = new newBank(124,2000);
-const account5 = new newBank(125,2000);
-const account6 = new newBank(126,2000);
+class currentAccount extends newBank {
+    withdraw(amount) {
+        const overdraft =1000;
+        if (amount <= 0) {
+            console.log(`Invaide withdraw amount`);
+        }
+        else if(this.balance + overdraft >=- amount){
+         this.balance -= amount;
+            console.log(`The owner wihdraw ${amount} and remaning balnce is ${this.balance}`)
+        }
+    }
+    static info(){
+        return ` you can take overdraft upto 1000rs`
+    }
+}
+const account1 = new newBank(121, 2000);
+const account2 = new newBank(122, 2000);
+const account3 = new newBank(123, 2000);
+const account4 = new newBank(124, 2000);
+const account5 = new newBank(125, 2000);
+const account6 = new newBank(126, 2000);
 console.log(newBank.bankInfo());
 
 savingAcounts.changeBankName("Best bank of India");
 console.log(newBank.bankInfo());
+const account7 = new savingAcounts(1233,1000);
+console.log(account7.withdraw(800));
+const account8 = new currentAccount(123444,2000);
+console.log(account8.withdraw(2700));
