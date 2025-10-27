@@ -1041,3 +1041,35 @@ acc1.owner = "krishna"
 const acc2 = new savingAcount(123123,"amrita",2000,5);
 console.log(acc2.deposite(100));
 console.log(acc2.withdraw(2000));
+
+
+class newBank {
+    static bankName = "Tech bank of India";
+    static totalAccounts = 0;
+    constructor(accountNumber, balance =0) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        newBank.totalAccounts++;
+    }
+        withdraw(amount){
+        if(amount > 0  && amount  <= this.balance) this.balance -=amount;
+        else {console.log("insucfficient funds or invalid amount")}
+    }
+    deposite(amount){
+        if(amount > 0) {
+            this.balance +=amount;
+            return ` The Balance is ${this.balance}`
+        }
+        else console.log("deposite must be positive");
+    }
+    static bankInfo(){
+        return `The Bank name is "${this.bankName}" and total accounts are ${this.totalAccounts};`
+    }
+}
+const account1 = new newBank(121,2000);
+const account2 = new newBank(122,2000);
+const account3 = new newBank(123,2000);
+const account4 = new newBank(124,2000);
+const account5 = new newBank(125,2000);
+const account6 = new newBank(126,2000);
+console.log(newBank.bankInfo());
