@@ -1149,3 +1149,43 @@ const animalList = [new dog(), new cow(),new cat()];
 animalList.forEach(val =>{
     console.log(val.makeSound());
 })
+
+class vehicle {
+    static totalvehicle = 0;
+    constructor (brand,model,year){
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        vehicle.totalvehicle++;
+    }
+    displayInfo(){
+        return `The brand of the vehicle is ${this.brand} and it's model is ${this.model} and it was launch in ${this.year}`;
+    }
+    startEngine(){
+        console.log("Engine started 🚀");
+    }
+    static showTotalVehicles(){
+        return ` Total vehicles are ${this.totalvehicle}`;
+    }
+}
+class cars extends vehicle {
+   startEngine(){
+    console.log("cars Engine started 🚗");
+   }
+}
+class bike extends vehicle {
+    startEngine(){
+        console.log("Bike Engine started 🏍️")
+    }
+}
+class truck extends vehicle {
+    startEngine(){
+        console.log("Truck Engine started 🚛");
+    }
+}
+
+const car1 = new cars("BMW","M4 competion", 2024);
+const bike1 = new bike("Royal Enfield","Classic 350 cc", 2022);
+const truck = new truck("volvo", "volvo S900",2020);
+
+
