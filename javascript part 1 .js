@@ -1087,7 +1087,7 @@ class savingAcounts extends newBank {
         }
     }
     static info() {
-        return `Balance can not be less than ${Min_Balance}`;
+        return `Balance can not be less than 500`;
     }
 }
 class currentAccount extends newBank {
@@ -1119,4 +1119,33 @@ const account7 = new savingAcounts(1233,1000);
 console.log(account7.withdraw(800));
 const account8 = new currentAccount(123444,2000);
 console.log(account8.withdraw(2700));
+console.log(savingAcounts.info())
+console.log(currentAccount.info());
 
+class Animals {
+    makeSound(){
+        console.log("some genric animal sound")
+    }
+}
+class dog extends Animals{
+    makeSound(){
+        console.log("bark")
+        return;
+    }
+}
+class cat extends Animals{
+    makeSound(){
+        console.log("meow")
+        return;
+    }
+}
+class cow extends Animals{
+    makeSound(){
+        console.log("moo")
+        return;
+    }
+}
+const animalList = [new dog(), new cow(),new cat()];
+animalList.forEach(val =>{
+    console.log(val.makeSound());
+})
