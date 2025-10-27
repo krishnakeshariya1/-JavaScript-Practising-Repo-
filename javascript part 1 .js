@@ -959,8 +959,9 @@ console.log(l1.info());
 class bankAccount {
     #balance;
 
-    constructor(accountNumber,balance){
+    constructor(accountNumber,ownerName,balance =0){
         this.accountNumber = accountNumber;
+        this.ownerName = ownerName;
         this.#balance = balance;
     }
     getBlance(){
@@ -980,13 +981,26 @@ class bankAccount {
         if(amount > 0) this.#balance +=amount;
         else contactInfo.log("deposite must be positive");
     }
+    get balanceInfo(){
+        return ` Current Balance is :- ${this.#balance}`;
+    }
+    set owner(newName){
+       if(typeof newName !== "string" || newName.trim().length <=3){
+        return `Invalide name or must be greater than 3`;
+       }
+        else{
+            this.ownerName = newName.trim();
+            console.log(`Owner name updated to : ${this.ownerName}`);
+        }
+    }
 }
-const acc1 = new bankAccount(1234567,500)
+const acc1 = new bankAccount(1234567,"karan",500)
 console.log(acc1.getBlance());
+console.log(acc1);
 acc1.deposite(200);
 console.log(acc1.getBlance());
 acc1.withdraw(100);
 console.log(acc1.getBlance());
 acc1.setBalance(-50)
 console.log(acc1.getBlance());
-
+acc1.owner = "krishna"
