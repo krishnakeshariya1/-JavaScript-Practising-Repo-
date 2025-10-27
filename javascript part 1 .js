@@ -1196,11 +1196,12 @@ vehicles.forEach(val => {
 console.log(vehicle.showTotalVehicles())
 
 class shape {
-    constructor(){
+    constructors(){
         if(new.target === shape){
             throw new Error("❌ can not instantiate abstract class 'shape' directly");
         }
     }
+
     calculateArea(){
         throw new Error("method calculateArea must be implemented in subclass ❌");
     }
@@ -1228,5 +1229,5 @@ const rectangle1 = new rectangle(10,5);
 const  circle1 = new circle(12);
 const shapes = [ rectangle1, circle1];
 shapes.forEach(val =>{
-    console.log(`${shape.construc}`)
+    console.log(`${val.constructors.name} area :-  ${val.calculateArea().toFixed(2)}`);
 })
