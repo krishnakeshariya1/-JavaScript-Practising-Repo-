@@ -1194,3 +1194,19 @@ vehicles.forEach(val => {
     val.startEngine();
 });
 console.log(vehicle.showTotalVehicles())
+
+class shape {
+    constructor(){
+        if(new.target === shape){
+            throw new Error("❌ can not instantiate abstract class 'shape' directly");
+        }
+    }
+    calculateArea(){
+        throw new Error("method calculateArea must be implemented in subclass ❌");
+    }
+}
+class rectangle extends {
+    constructor(parameters) {
+        
+    }
+}
