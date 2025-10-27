@@ -1066,10 +1066,21 @@ class newBank {
         return `The Bank name is "${this.bankName}" and total accounts are ${this.totalAccounts};`
     }
 }
+class savingAcounts extends newBank{
+    constructor(accountNumber, balance) {
+        super(accountNumber, balance);
+    }
+    static changeBankName(newName){
+        newBank.bankName = newName;
+    }
+}
 const account1 = new newBank(121,2000);
 const account2 = new newBank(122,2000);
 const account3 = new newBank(123,2000);
 const account4 = new newBank(124,2000);
 const account5 = new newBank(125,2000);
 const account6 = new newBank(126,2000);
+console.log(newBank.bankInfo());
+
+savingAcounts.changeBankName("Best bank of India");
 console.log(newBank.bankInfo());
