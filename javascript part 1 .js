@@ -978,8 +978,11 @@ class bankAccount {
         else {console.log("insucfficient funds or invalid amount")}
     }
     deposite(amount){
-        if(amount > 0) this.#balance +=amount;
-        else contactInfo.log("deposite must be positive");
+        if(amount > 0) {
+            this.#balance +=amount;
+            return ` The Balance is ${this.#balance}`
+        }
+        else console.log("deposite must be positive");
     }
     get balanceInfo(){
         return ` Current Balance is :- ${this.#balance}`;
@@ -994,6 +997,36 @@ class bankAccount {
         }
     }
 }
+class savingAcount extends bankAccount{
+    constructor(accountNumber,ownerName,balance, intrestRate){
+        super( accountNumber,ownerName);
+        this.intrestRate = intrestRate;
+        this.balance = balance;
+    }
+    addIntrest(){
+        const intrest = (this.balance *this.intrestRate)/100;
+        this.balance +=intrest;
+        return this.balance;
+    }
+    withdraw (amount){
+        const Min_Balance = 500;
+        const current = this.getBlance();
+        if(amount <=0) {
+            console.log(`Invaide withdraw amount`);
+        }
+
+        else if(current - amount <= Min_Balance){
+            console.log(` Can not withdraw ${amount}. Minimum balance ${Min_Balance} must be maintained`)
+            return;
+        }
+        else{
+        current -= amount;
+        console.log( `Remaning balance is ${this.balance}`)
+        return;
+        }
+    }
+}
+
 const acc1 = new bankAccount(1234567,"karan",500)
 console.log(acc1.getBlance());
 console.log(acc1);
@@ -1004,3 +1037,7 @@ console.log(acc1.getBlance());
 acc1.setBalance(-50)
 console.log(acc1.getBlance());
 acc1.owner = "krishna"
+
+const acc2 = new savingAcount(123123,"amrita",2000,5);
+console.log(acc2.deposite(100));
+console.log(acc2.withdraw(2000));
