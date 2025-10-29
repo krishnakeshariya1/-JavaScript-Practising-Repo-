@@ -1253,3 +1253,15 @@ persons.prototype.isAdult = function(){
     return this.age >= 18;
 };
 console.log(p1.isAdult());
+
+function stu(name ,age, grade){
+    persons.call(this, name ,age);
+    this.grade = grade;
+}
+stu.prototype = Object.create(persons.prototype);
+stu.prototype.constructor = stu;
+const s1 = new stu("krishna", 21,"A");
+console.log(s1.isAdult()); // return true
+console.log(s1.greet())
+console.log(s1.grade)
+
