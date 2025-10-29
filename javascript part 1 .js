@@ -1265,3 +1265,7 @@ console.log(s1.isAdult()); // return true
 console.log(s1.greet())
 console.log(s1.grade)
 
+stu.prototype.greet = function(){
+    console.log(`Hi, I am ${this.name}, i'm ${this.age} year old and I am a student, Grade - ${this.grade}`);
+}
+console.log(s1.greet());
