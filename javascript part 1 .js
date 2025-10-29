@@ -1231,3 +1231,15 @@ const shapes = [ rectangle1, circle1];
 shapes.forEach(val =>{
     console.log(`${val.constructors.name} area :-  ${val.calculateArea().toFixed(2)}`);
 })
+
+function persons(name,age){
+    this.name = name;
+    this.age = age;
+}
+persons.prototype.greet = function(){
+    console.log(`Hi, I am ${this.name} and my age is ${this.age}`);
+}
+const p1 = new persons("krishna",20);
+const p2 = new persons("karan",22);
+console.log(p1.greet());
+console.log(p2.greet());
