@@ -1243,3 +1243,13 @@ const p1 = new persons("krishna",20);
 const p2 = new persons("karan",22);
 console.log(p1.greet());
 console.log(p2.greet());
+
+console.log(p1.__proto__);
+console.log(persons.prototype)
+
+console.log(persons.prototype === p1.__proto__) // true
+console.log(Object.getPrototypeOf(p1) === persons.prototype); // true "official way"
+persons.prototype.isAdult = function(){
+    return this.age >= 18;
+};
+console.log(p1.isAdult());
