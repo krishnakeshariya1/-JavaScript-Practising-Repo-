@@ -1290,3 +1290,19 @@ const animal1 = new animal("Generic","mammal");
 animal1.speak();
 const dog1 = new Dogs("Buddy", "Dog", "Golden Retiriver");
 dog1.speak();
+
+function Car(brand, model){
+    this.brand = brand;
+    this.model = model;
+}
+Car.prototype.start = function(){
+    console.log(`${this.brand} ${this.model} has launched`);
+}
+const c1 = new Car("BMW", "m4");
+const c2 = new Car("Tata","punch");
+
+Car.prototype.stop = function(){
+    console.log(`${this.brand} ${this.model} has stopped`)
+}
+c1.start();
+c1.stop();
