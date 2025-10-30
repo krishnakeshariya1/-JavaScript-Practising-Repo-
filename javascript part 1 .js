@@ -1306,3 +1306,19 @@ Car.prototype.stop = function(){
 }
 c1.start();
 c1.stop();
+
+const vehicle1 ={
+    drive : function(){
+        console.log(`Vehicle is moving...`)
+    }
+    
+};
+const Car1 = Object.create(vehicle1);
+Car1.brand = "bmw";
+Car1.fuel = "petrol";
+
+Car1.refule = function(){
+    console.log(`${this.fuel} is filling`);
+}
+Car1.drive();
+Car1.refule();
