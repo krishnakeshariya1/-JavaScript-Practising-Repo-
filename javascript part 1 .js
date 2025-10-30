@@ -1322,3 +1322,34 @@ Car1.refule = function(){
 }
 Car1.drive();
 Car1.refule();
+
+function BankAccount(owner,balnce) {
+    this.owner = owner;
+    this.balance = balnce;
+}
+BankAccount.prototype.deposite = function(amount){
+    this.balance +=amount;
+    console.log(`${this.owner} deposited ${amount} and now total balace is ${this.balance}`)
+};
+BankAccount.prototype.withdraw = function(amount){
+    if(amount > this.balance){
+        console.log(`${this.owner} has insufficient balace`);
+    }
+    else{
+        this.balance -=amount;
+        console.log(`${this.owner} has withdraw ${amount} and now remaning balance is ${this.balance}`);
+    }
+};
+BankAccount.compareBalance = function(accc1,accc2){
+    if(accc1.balance > accc2.balance){
+        console.log(`${accc1.owner} has more balance`);
+    }
+    else{
+        console.log(`${accc2.owner} has more balance`);
+    }
+};
+const accc1 = new BankAccount("krishna",10000);
+const accc2 = new BankAccount("amrita", 12000);
+accc1.deposite(1000);
+accc2.withdraw(2000);
+BankAccount.compareBalance(accc1,accc2)
