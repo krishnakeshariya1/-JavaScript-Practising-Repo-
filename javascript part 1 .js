@@ -1269,3 +1269,24 @@ stu.prototype.greet = function(){
     console.log(`Hi, I am ${this.name}, i'm ${this.age} year old and I am a student, Grade - ${this.grade}`);
 }
 console.log(s1.greet());
+
+function animal(name , type){
+    this.name = name;
+    this.type = type;
+}
+animal.prototype.speak = function(){
+    console.log(`Genetic animal makes a sound`);
+}
+function Dogs(name,type,bread){
+    animal.call(this , name , type)
+    this.bread = bread;
+}
+Dogs.prototype = Object.create(animal.prototype);
+Dogs.prototype.constructor = Dogs;
+Dogs.prototype.speak = function(){
+    console.log(`${this.name} the ${this.bread}`);
+}
+const animal1 = new animal("Generic","mammal");
+animal1.speak();
+const dog1 = new Dogs("Buddy", "Dog", "Golden Retiriver");
+dog1.speak();
