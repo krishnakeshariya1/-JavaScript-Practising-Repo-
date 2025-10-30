@@ -1352,4 +1352,24 @@ const accc1 = new BankAccount("krishna",10000);
 const accc2 = new BankAccount("amrita", 12000);
 accc1.deposite(1000);
 accc2.withdraw(2000);
-BankAccount.compareBalance(accc1,accc2)
+BankAccount.compareBalance(accc1,accc2);
+
+Array.prototype.last = function(){
+    if(this.length === 0) return "empty array";
+    return this[this.length-1]
+};
+const Series = [12,34,65,32,23,800];
+console.log(Series.last());
+
+String.prototype.reverse =function(){
+    return this.split('').reverse().join('');
+}
+const word = "javascript";
+console.log(word.reverse());
+
+Array.prototype.average = function(){
+    if(this.length === 0) return "empty error";
+    const sum = this.reduce((acc,curVal) => acc + curVal,0);
+    return sum /  this.length;
+};
+console.log([10,20,30,40,50].average())
